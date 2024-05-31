@@ -3,20 +3,20 @@
 
 # Installation
 
-# Clone the repository:
+Clone the repository:
 
-# git clone https://github.com/bawantha3395/salary-calculator-2024-Q1-bawantha395.git
-# cd salary-calculator-2024-q1-bawantha395
+    git clone https://github.com/bawantha3395/salary-calculator-2024-Q1-bawantha395.git
+    cd salary-calculator-2024-q1-bawantha395
 
-# Install the dependencies:
-# npm install
+Install the dependencies:
+    npm install
 
-# Running the Application
+Running the Application
 
-# To start the development server, run:
-# npm start
+To start the development server, run:
+    npm start
 
-# The application will be available at http://localhost:3000.
+The application will be available at http://localhost:3000.
  
 
 Overview
