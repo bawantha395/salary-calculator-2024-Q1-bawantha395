@@ -1,35 +1,42 @@
-import React from "react";
-
-import { Box, Grid } from "@mui/material";
+import React, { useState } from "react";
+import { Stack } from "@mui/material";
 import CalculateYourSalaryCard from "../../components/calculateYourSalaryCard";
-import YourSararyCard from "../../components/yourSararyCard";
-export default function SalaryCalculator() {
-  return (
-    <div>
-      <Box
-        display="flex"
-        sx={{
-          backgroundColor: "lightblue",
-          // backgroundColor: '#FFFFFF',
-          width: "1440px",
-          height: "900px",
-          position: "relative",
-          border: "2px solid grey",
-        }}
-      >
-        <CalculateYourSalaryCard />
-        <YourSararyCard/>
-            {/* <Grid container spacing={2}>
-            <Grid item xs={12} md={6}>
-                <CalculateYourSalaryCard />
-            </Grid>
-            <Grid item xs={12} md={6}>
-            <YourSararyCard/>
-            </Grid>
-            </Grid> */}
+import SalaryCard from "../../components/salaryCard";
 
-            
-      </Box>
-    </div>
+export default function SalaryCalculator() {
+  const [salaryDetails, setSalaryDetails] = useState({
+    basicSalary: 0,
+    earnings: [],
+    deductions: [],
+    totalEarnings: 0,
+    grossDeduction: 0,
+    grossEarnings: 0,
+    totalEarningsForEPF: 0,
+    employeeEPF: 0,
+    employerEPF: 0,
+    employerETF: 0,
+    apit: 0,
+    netSalary: 0,
+    ctc: 0,
+  });
+
+  const updateSalaryDetails = (details) => {
+    setSalaryDetails(details);
+  };
+
+  return (
+    <Stack
+      sx={{
+        backgroundColor: "#FFFFFF",
+        width: "100%",
+        minHeight: "900px",
+        padding: { xs: "24px", sm: "48px", md: "128px" },
+      }}
+      direction={{ xs: "column", sm: "row" }}
+      spacing={{ xs: 2, sm: 3, md: 4 }}
+    >
+      <CalculateYourSalaryCard updateSalaryDetails={updateSalaryDetails} />
+      <SalaryCard salaryDetails={salaryDetails} />
+    </Stack>
   );
 }
